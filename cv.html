@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Moutassie Honoré Crépin | Développeur Fullstack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --light-bg: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cv-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+        }
+        
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent);
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .section-title {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .contact-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            margin-right: 0.8rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            background-color: white;
+        }
+        
+        .header {
+            margin-bottom: 2rem;
+        }
+        
+        .name {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        
+        .description {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .position, .degree {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .company, .university {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .item-content {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .project-card {
+            border: 1px solid #eee;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        .project-title {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-links a {
+            color: var(--secondary);
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .project-links a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                text-align: center;
+            }
+            
+            .profile-img-container {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-img-container">
+                <!-- Remplacez par le chemin de votre photo -->
+                <img src="profile.jpg" alt="Moutassie Honoré Crépin" class="profile-img">
+            </div>
+            
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+237 620 978 836</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>moutassie@icloud.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Douala, Cameroun</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/votrepseudo</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/votrepseudo</span>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Compétences</h2>
+            <ul class="skills-list">
+                <li>Développement Fullstack</li>
+                <li>JavaScript (React, Node.js)</li>
+                <li>Sécurité informatique</li>
+                <li>Architecture réseau</li>
+                <li>Montage vidéo</li>
+                <li>Traduction technique</li>
+                <li>Gestion de projet</li>
+            </ul>
+            
+            <h2 class="section-title">Langues</h2>
+            <ul class="skills-list">
+                <li>Français - Natif</li>
+                <li>Anglais - Courant</li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 class="name">Moutassie Honoré Crépin</h1>
+                <h2 class="title">Développeur Fullstack & Expert Sécurité</h2>
+                <p class="description">
+                    Passionné par le développement de systèmes sécurisés et innovants. 
+                    Je mets mes compétences techniques et ma créativité au service 
+                    de solutions web performantes et fiables.
+                </p>
+            </header>
+            
+            <h2 class="section-title" style="color: var(--primary);">Expérience Professionnelle</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="position">Stage en Sécurité Réseau</h3>
+                        <h4 class="company">CyberSecure Ltd., Douala</h4>
+                    </div>
+                    <span class="date">2019 - 2020</span>
+                </div>
+                <p class="item-content">
+                    Audit de sécurité des infrastructures réseau. Développement de solutions 
+                    personnalisées pour la protection des données sensibles.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="position">Développeur Fullstack Senior</h3>
+                        <h4 class="company">Tech Solutions Inc., Douala</h4>
+                    </div>
+                    <span class="date">2020 - Présent</span>
+                </div>
+                <p class="item-content">
+                    Conception et développement d'applications web sécurisées avec React et Node.js.
+                    Mise en place de protocoles de sécurité avancés et optimisation des performances.
+                </p>
+            </div>
+            
+            
+            <h2 class="section-title" style="color: var(--primary);">Formation</h2>
+            
+            
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="degree">Licence en Informatique</h3>
+                        <h4 class="university">Université de Douala</h4>
+                    </div>
+                    <span class="date">2023 - maintenant</span>
+                </div>
+            </div>
+            
+            <h2 class="section-title" style="color: var(--primary);">Projets Réalisés</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">Plateforme E-commerce Sécurisée</h3>
+                    <p>Solution complète avec cryptage des paiements</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">Système de Surveillance Réseau</h3>
+                    <p>Outil de détection d'intrusions en temps réel</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title" style="color: var(--primary);">Ambitions</h2>
+            <p class="item-content" style="margin-top: 0.5rem;">
+                "Développer les systèmes de sécurité les plus avancés et contribuer 
+                à l'évolution des infrastructures réseau en Afrique et dans le monde."
+            </p>
+        </main>
+    </div>
+</body>
+</html>

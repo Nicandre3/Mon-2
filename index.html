@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moutassie Honoré Crépin | Expert Sécurité & Réseaux</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            padding: 2rem 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--accent);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        /* Section Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5rem;
+            position: relative;
+            gap: 3rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .profile-image-container {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 5px solid var(--accent);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+            overflow: hidden;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            margin-right: 1rem;
+            width: 20px;
+        }
+        
+        /* Autres sections (gardez le même style que précédemment) */
+        .skills {
+            padding: 5rem;
+            background-color: var(--secondary);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -10px;
+            left: 0;
+            background-color: var(--accent);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: rgba(10, 25, 47, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+        }
+        
+        .reflections {
+            padding: 5rem;
+        }
+        
+        .reflection-item {
+            background-color: var(--secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .reflection-item h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background-color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .profile-image-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem;
+            }
+            
+            .hero {
+                flex-direction: column-reverse;
+                padding: 2rem;
+                text-align: center;
+            }
+            
+            .profile-image-container {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 2rem;
+            }
+            
+            .skills, .reflections {
+                padding: 2rem;
+            }
+            
+            .contact-item {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MHC</div>
+        <nav>
+            <ul>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#reflexions">Réflexions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Moutassie Honoré Crépin</h1>
+            <h2>Expert en Sécurité & Réseaux</h2>
+            <p>Spécialiste dans le développement de systèmes sécurisés et infrastructures réseau performantes. Passionné par l'innovation technologique et la résolution de problèmes complexes.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+237 620 978 836</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>moutassie@icloud.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Douala, Cameroun</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECTION PHOTO DE PROFIL -->
+        <div class="profile-image-container">
+            <!-- REMPLACEZ LE CHEMIN CI-DESSOUS PAR LE CHEMIN DE VOTRE PHOTO -->
+            <img src="profile.jpg" alt="Photo de Moutassie Honoré Crépin" class="profile-image">
+            <!-- 
+                Instructions pour ajouter votre photo :
+                1. Enregistrez votre photo dans le même dossier que votre fichier HTML
+                2. Remplacez "chemin/vers/votre-photo.jpg" par le nom de votre fichier
+                   Exemple : "ma-photo.jpg" si la photo est dans le même dossier
+                   Ou "images/ma-photo.jpg" si vous créez un sous-dossier "images"
+                3. Assurez-vous que la photo est au format JPG, PNG ou WebP
+            -->
+        </div>
+    </section>
+    
+    <!-- Le reste du code reste identique -->
+    <section class="skills" id="competences">
+        <h2 class="section-title">Mes Compétences</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programmation Web</h3>
+                <div class="skill-item">
+                    <p>Développement d'applications web sécurisées</p>
+                </div>
+                <div class="skill-item">
+                    <p>Front-end & Back-end</p>
+                </div>
+                <div class="skill-item">
+                    <p>Architecture des systèmes</p>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Montage Vidéo</h3>
+                <div class="skill-item">
+                    <p>Création de contenus multimédias professionnels</p>
+                </div>
+                <div class="skill-item">
+                    <p>Post-production</p>
+                </div>
+                <div class="skill-item">
+                    <p>Animation graphique</p>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Traduction</h3>
+                <div class="skill-item">
+                    <p>Traduction technique de documents</p>
+                </div>
+                <div class="skill-item">
+                    <p>Localisation de contenus</p>
+                </div>
+                <div class="skill-item">
+                    <p>Multilinguisme</p>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Sécurité & Réseaux</h3>
+                <div class="skill-item">
+                    <p>Architecture réseau sécurisée</p>
+                </div>
+                <div class="skill-item">
+                    <p>Analyse des vulnérabilités</p>
+                </div>
+                <div class="skill-item">
+                    <p>Protocoles de sécurité avancés</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="reflections" id="reflexions">
+        <h2 class="section-title">Mes Réflexions</h2>
+        
+        <div class="reflection-item">
+            <h3>Vision Technologique</h3>
+            <p>"Je m'engage à élaborer les meilleurs systèmes de sécurité de tous les temps, combinant innovation et fiabilité absolue pour protéger les données sensibles dans un monde de plus en plus connecté."</p>
+        </div>
+        
+        <div class="reflection-item">
+            <h3>Ambition Professionnelle</h3>
+            <p>"Mon objectif est de concevoir et déployer les infrastructures réseau les plus performantes au monde, en repoussant constamment les limites de la connectivité et de la vitesse de transmission."</p>
+        </div>
+        
+        <div class="reflection-item">
+            <h3>Approche d'Apprentissage</h3>
+            <p>"Je considère chaque projet comme une opportunité d'apprentissage, m'engageant à maîtriser les technologies émergentes pour rester à la pointe de l'industrie."</p>
+        </div>
+       <h3></h3> <a href="cv.html" class="reflection-item">voir mon cv</a></h3>
+    </section>
+    
+    <footer id="contact">
+        <h3>Contactez-moi</h3>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:moutassie@icloud.com"><i class="fas fa-envelope"></i></a>
+            
+        </div>
+        <p class="copyright">© 2023 Moutassie Honoré Crépin. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
